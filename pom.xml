@@ -17,17 +17,43 @@
 		<app.runtime>4.1.4</app.runtime>
 		<mule.maven.plugin.version>3.1.6</mule.maven.plugin.version>
 	</properties>
-
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
+            <groupId>org.mule.tools.maven</groupId>
+            <artifactId>mule-maven-plugin</artifactId>
+            <version>3.2.7</version>
+            <extensions>true</extensions>
 				<configuration>
-				</configuration>
-			</plugin>
+				  <standaloneDeployment>
+			  	    <muleHome>/home/ubuntu/mule-enterprise-standalone-4.2.0</muleHome>
+			        <muleVersion>4.2.0</muleVersion>
+			  	</standaloneDeployment>
+		        <cloudHubDeployment>
+		            <uri>https://anypoint.mulesoft.com</uri>
+		            <muleVersion>4.2.0</muleVersion>
+		            <username>mulesoft999</username>
+		            <password>Mulesoft@1</password>
+		            <applicationName>cicdapps</applicationName>
+		            <environment>Sandbox</environment>
+		            <properties>
+		                <http.port>8082</http.port>
+		            </properties>
+		        </cloudHubDeployment>
+    			</configuration>
+            <executions>
+               <execution>
+                  <id>deploy</id>
+                  <phase>deploy</phase>
+                  <goals>
+                     <goal>deploy</goal>
+                  </goals>
+                  <configuration>
+                     <classifier>mule-application</classifier>
+                  </configuration>
+               </execution>
+            </executions>
+         </plugin>
 		</plugins>
 	</build>
 
