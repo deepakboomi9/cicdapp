@@ -31,22 +31,17 @@
             <version>3.2.7</version>
             <extensions>true</extensions>
 				<configuration>
-				  <standaloneDeployment>
-			  	    <muleHome>/home/ubuntu/mule-enterprise-standalone-4.2.0</muleHome>
-			        <muleVersion>4.2.0</muleVersion>
-			  	</standaloneDeployment>
-		        <cloudHubDeployment>
-		            <uri>https://anypoint.mulesoft.com</uri>
-		            <muleVersion>4.2.0</muleVersion>
-		            <username>mulesoft999</username>
-		            <password>Mulesoft@1</password>
-		            <applicationName>cicdapps</applicationName>
-		            <environment>Sandbox</environment>
-		            <properties>
-		                <http.port>8082</http.port>
-		            </properties>
-		        </cloudHubDeployment>
-    			</configuration>
+			        <armDeployment>
+			            <uri>https://anypoint.mulesoft.com</uri>
+			            <muleVersion>4.2.0</muleVersion>
+			            <target>Mulesoft-AWS-Dev</target>
+          				<targetType>server</targetType>
+			            <username>mulesoft999</username>
+			            <password>Mulesoft@1</password>
+			            <applicationName>cicdapp</applicationName>
+			            <environment>Sandbox</environment>
+			        </armDeployment>
+			    </configuration>
             <executions>
                <execution>
                   <id>deploy</id>

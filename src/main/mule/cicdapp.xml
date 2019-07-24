@@ -9,7 +9,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<configuration-properties doc:name="Configuration properties" doc:id="6eff903f-c2cc-43f7-9e06-421802f7d03e" file="api/dev.properties" />
 	<flow name="cicdappFlow" doc:id="66b4d1ce-7e3f-46d0-89f7-ab138c526976" >
-		<http:listener doc:name="Listener" doc:id="e137e353-f5b7-4aeb-8ab8-ae9bc47b61ff" config-ref="HTTP_Listener_config" path="\cicdapp"/>
+		<http:listener doc:name="Listener" doc:id="e137e353-f5b7-4aeb-8ab8-ae9bc47b61ff" config-ref="HTTP_Listener_config" path="/cicdapp"/>
 		<set-payload value="${http.message}" doc:name="Set Payload" doc:id="445b7c7e-13ab-4713-98c7-e47767f0e13c" />
 	</flow>
 </mule>
